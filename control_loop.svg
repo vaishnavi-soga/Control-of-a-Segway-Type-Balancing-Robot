@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 180" width="860" height="180">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  style="stop-color:#161b22"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
+    <linearGradient id="plant" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  style="stop-color:#1f4068"/>
+      <stop offset="100%" style="stop-color:#0d2035"/>
+    </linearGradient>
+    <linearGradient id="ctrl" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  style="stop-color:#3a1f06"/>
+      <stop offset="100%" style="stop-color:#1a0d00"/>
+    </linearGradient>
+    <linearGradient id="obs" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  style="stop-color:#1f3a20"/>
+      <stop offset="100%" style="stop-color:#0d1a0d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="860" height="180" fill="url(#bg)" rx="10"/>
+  <text x="430" y="22" font-family="sans-serif" font-size="13" font-weight="bold"
+        fill="#e6edf3" text-anchor="middle">Closed-Loop Control Architecture</text>
+
+  <!-- Reference input -->
+  <text x="22" y="95" font-family="monospace" font-size="11" fill="#8b949e">θ_ref</text>
+  <text x="22" y="108" font-family="monospace" font-size="9"  fill="#484f58">(= 0 upright)</text>
+  <line x1="65" y1="95" x2="88" y2="95" stroke="#58a6ff" stroke-width="1.5"/>
+  <polygon points="88,91 98,95 88,99" fill="#58a6ff"/>
+
+  <!-- Summing junction -->
+  <circle cx="110" cy="95" r="14" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="110" y="99" font-family="sans-serif" font-size="13" fill="#58a6ff" text-anchor="middle">Σ</text>
+  <text x="103" y="88" font-family="sans-serif" font-size="9" fill="#3fb950">+</text>
+  <text x="103" y="115" font-family="sans-serif" font-size="9" fill="#e85555">−</text>
+
+  <!-- Error to controller -->
+  <text x="116" y="90" font-family="monospace" font-size="9" fill="#8b949e">e(t)</text>
+  <line x1="124" y1="95" x2="152" y2="95" stroke="#ff8c42" stroke-width="1.5"/>
+  <polygon points="152,91 162,95 152,99" fill="#ff8c42"/>
+
+  <!-- Controller box -->
+  <rect x="162" y="68" width="130" height="54" rx="7" fill="url(#ctrl)" stroke="#ff8c42" stroke-width="1.8"/>
+  <text x="227" y="88" font-family="monospace" font-size="11" fill="#ff8c42" text-anchor="middle">Controller</text>
+  <line x1="177" y1="95" x2="277" y2="95" stroke="#ff8c42" stroke-width="0.5" opacity="0.4"/>
+  <text x="227" y="106" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">u = −Kx</text>
+  <text x="227" y="118" font-family="sans-serif" font-size="9"  fill="#8b949e" text-anchor="middle">K = [9.0053  11.978  −7.059]</text>
+
+  <!-- Controller to plant -->
+  <text x="298" y="90" font-family="monospace" font-size="9" fill="#8b949e">u(t)</text>
+  <line x1="292" y1="95" x2="320" y2="95" stroke="#ff8c42" stroke-width="1.5"/>
+  <polygon points="320,91 330,95 320,99" fill="#ff8c42"/>
+
+  <!-- Plant box -->
+  <rect x="330" y="55" width="200" height="80" rx="7" fill="url(#plant)" stroke="#58a6ff" stroke-width="2"/>
+  <text x="430" y="78" font-family="monospace" font-size="11" fill="#58a6ff" text-anchor="middle">Plant: Segway Robot</text>
+  <line x1="345" y1="85" x2="515" y2="85" stroke="#58a6ff" stroke-width="0.5" opacity="0.4"/>
+  <text x="430" y="100" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">ẋ = Ax + Bu</text>
+  <text x="430" y="113" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">y = Cx  (output: θ)</text>
+  <text x="430" y="126" font-family="sans-serif" font-size="9"  fill="#484f58" text-anchor="middle">3 states: θ, θ̇, φ̇</text>
+
+  <!-- Plant output -->
+  <text x="536" y="90" font-family="monospace" font-size="9" fill="#8b949e">x(t), y=θ</text>
+  <line x1="530" y1="95" x2="600" y2="95" stroke="#3fb950" stroke-width="1.5"/>
+  <polygon points="600,91 610,95 600,99" fill="#3fb950"/>
+
+  <!-- Output box -->
+  <rect x="610" y="68" width="90" height="54" rx="7" fill="url(#obs)" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="655" y="89" font-family="monospace" font-size="11" fill="#3fb950" text-anchor="middle">Output</text>
+  <line x1="625" y1="96" x2="690" y2="96" stroke="#3fb950" stroke-width="0.5" opacity="0.4"/>
+  <text x="655" y="108" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">y = θ (rad)</text>
+
+  <!-- Output to display -->
+  <line x1="700" y1="95" x2="735" y2="95" stroke="#3fb950" stroke-width="1.5"/>
+  <polygon points="735,91 745,95 735,99" fill="#3fb950"/>
+  <text x="750" y="99" font-family="monospace" font-size="11" fill="#3fb950">θ(t)</text>
+
+  <!-- Feedback path -->
+  <line x1="655" y1="122" x2="655" y2="145" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="655" y1="145" x2="110" y2="145" stroke="#58a6ff" stroke-width="1.5"/>
+  <line x1="110" y1="145" x2="110" y2="109" stroke="#58a6ff" stroke-width="1.5"/>
+  <polygon points="106,109 110,99 114,109" fill="#58a6ff"/>
+  <text x="382" y="158" font-family="sans-serif" font-size="9" fill="#484f58" text-anchor="middle">Full-state feedback (all states fed back to controller)</text>
+
+  <!-- State feedback label -->
+  <text x="382" y="168" font-family="monospace" font-size="9" fill="#58a6ff" text-anchor="middle">x = [θ  θ̇  φ̇]ᵀ  (all states assumed measurable)</text>
+</svg>
