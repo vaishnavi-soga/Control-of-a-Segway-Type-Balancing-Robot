@@ -2,9 +2,8 @@
 
 ![Segway Balancing Robot Banner](images/banner.svg)
 
-**Course:** MAE 506 – Advanced System Modeling, Dynamics, and Control  
-**Institution:** Arizona State University  
-**Team:** Abhay Parwal · Vaishanavi Sogalad · Josia Vargheese Thomas
+Advanced System Modeling, Dynamics, and Control  
+Author Vaishanavi Sogalad
 
 </div>
 
@@ -255,23 +254,6 @@ The report identifies several extensions that would make this a practical physic
 - **Disturbance rejection** — extend to handle external pushes, ground slope, and noise
 - **Actuator limits** — motor torque is bounded in reality; anti-windup and saturation handling needed
 - **LQR design** — optimal trade-off between state error and control effort (vs. manual pole placement)
-
----
-
-## 👥 Team Contributions
-
-| Member | Contribution |
-|---|---|
-| **Vaishanavi Sogalad** | Introduction, nonlinear modeling framework, physical parameter organization, mathematical foundation |
-| **Abhay Parwal** | Linearization, state-space formulation, controllability/observability/stability analysis, pole placement controller design |
-| **Josia Vargheese Thomas** | All MATLAB simulations — open-loop, closed-loop, state trajectories; result analysis and validation |
-
----
-
-## 📚 Course Information
-
-**MAE 506 — Advanced System Modeling, Dynamics, and Control**  
-Arizona State University
 
 ---
 
