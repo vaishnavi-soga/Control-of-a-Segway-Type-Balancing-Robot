@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:#0d1117"/>
+      <stop offset="50%"  style="stop-color:#161b22"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
+    <linearGradient id="pendGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   style="stop-color:#58a6ff"/>
+      <stop offset="100%" style="stop-color:#1f6feb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#1e2a3a" stroke-width="0.5" opacity="0.4">
+    <line x1="0" y1="50"  x2="900" y2="50"/>
+    <line x1="0" y1="100" x2="900" y2="100"/>
+    <line x1="0" y1="150" x2="900" y2="150"/>
+    <line x1="150" y1="0" x2="150" y2="200"/>
+    <line x1="300" y1="0" x2="300" y2="200"/>
+    <line x1="750" y1="0" x2="750" y2="200"/>
+  </g>
+
+  <!-- ── SEGWAY SCHEMATIC ── -->
+  <!-- Ground line -->
+  <line x1="580" y1="165" x2="760" y2="165" stroke="#484f58" stroke-width="2"/>
+
+  <!-- Left Wheel -->
+  <circle cx="620" cy="152" r="18" fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <circle cx="620" cy="152" r="5"  fill="#4a90d9" opacity="0.6"/>
+  <!-- Wheel spokes -->
+  <line x1="620" y1="134" x2="620" y2="170" stroke="#4a90d9" stroke-width="1" opacity="0.5"/>
+  <line x1="602" y1="152" x2="638" y2="152" stroke="#4a90d9" stroke-width="1" opacity="0.5"/>
+
+  <!-- Right Wheel -->
+  <circle cx="720" cy="152" r="18" fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <circle cx="720" cy="152" r="5"  fill="#4a90d9" opacity="0.6"/>
+  <line x1="720" y1="134" x2="720" y2="170" stroke="#4a90d9" stroke-width="1" opacity="0.5"/>
+  <line x1="702" y1="152" x2="738" y2="152" stroke="#4a90d9" stroke-width="1" opacity="0.5"/>
+
+  <!-- Axle -->
+  <line x1="620" y1="152" x2="720" y2="152" stroke="#4a90d9" stroke-width="2"/>
+
+  <!-- Pendulum body — slightly tilted to show instability/control -->
+  <g transform="rotate(-8, 670, 152)">
+    <!-- Body rod -->
+    <line x1="670" y1="152" x2="670" y2="62" stroke="url(#pendGrad)" stroke-width="4" stroke-linecap="round"/>
+    <!-- Body mass (box) -->
+    <rect x="650" y="45" width="40" height="26" rx="5" fill="#1f4068" stroke="#58a6ff" stroke-width="1.5"/>
+    <text x="670" y="62" font-family="sans-serif" font-size="9" fill="#58a6ff" text-anchor="middle">m_b</text>
+  </g>
+
+  <!-- Torque arrow (motor input u) -->
+  <path d="M 643 148 Q 638 132 650 126" stroke="#ff8c42" stroke-width="2" fill="none" stroke-dasharray="3,2"/>
+  <polygon points="650,126 644,120 658,122" fill="#ff8c42"/>
+  <text x="625" y="120" font-family="monospace" font-size="10" fill="#ff8c42">u (torque)</text>
+
+  <!-- Theta angle arc -->
+  <path d="M 670 110 Q 683 102 686 115" stroke="#3fb950" stroke-width="1.5" fill="none"/>
+  <text x="688" y="112" font-family="monospace" font-size="10" fill="#3fb950">θ</text>
+
+  <!-- Vertical reference (dashed) -->
+  <line x1="670" y1="55" x2="670" y2="152" stroke="#484f58" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- State labels -->
+  <text x="810" y="80"  font-family="monospace" font-size="10" fill="#8b949e">x₁ = θ (tilt)</text>
+  <text x="810" y="98"  font-family="monospace" font-size="10" fill="#8b949e">x₂ = θ̇ (ang. vel)</text>
+  <text x="810" y="116" font-family="monospace" font-size="10" fill="#8b949e">x₃ = φ̇ (wheel vel)</text>
+  <text x="810" y="140" font-family="monospace" font-size="10" fill="#ff8c42">u = -Kx (control)</text>
+
+  <!-- ── TEXT SECTION ── -->
+  <text x="50" y="38" font-family="sans-serif" font-size="22" font-weight="bold" fill="#e6edf3">
+    🤖 Segway Balancing Robot — State-Space Control
+  </text>
+  <text x="52" y="60" font-family="sans-serif" font-size="12" fill="#8b949e">
+    MAE 506 · Arizona State University · MATLAB Simulation
+  </text>
+
+  <!-- Inverted pendulum label -->
+  <text x="52" y="95" font-family="sans-serif" font-size="13" fill="#58a6ff" font-weight="bold">
+    Inverted Pendulum on Wheels
+  </text>
+  <text x="52" y="115" font-family="sans-serif" font-size="11" fill="#8b949e">
+    Naturally unstable → stabilized via state-feedback pole placement
+  </text>
+
+  <!-- Bottom tag line -->
+  <text x="50" y="185" font-family="monospace" font-size="11" fill="#3fb950">
+    ✓ Lagrangian Modeling  ✓ Linearization  ✓ Controllability/Observability  ✓ Pole Placement  ✓ MATLAB Sim
+  </text>
+</svg>
